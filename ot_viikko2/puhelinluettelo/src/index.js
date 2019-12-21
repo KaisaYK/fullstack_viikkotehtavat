@@ -10,7 +10,7 @@ axios
   const persons = response.data
   console.log(persons)
   ReactDOM.render(
-    <App persons={persons} />,
+    <App />,
     document.getElementById('root')
   )
 })

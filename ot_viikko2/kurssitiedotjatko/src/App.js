@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react'
+import Course from './components/course'
+
+const App = ({ courses }) => {
+
+const total = courses[0].parts.reduce( (s, p) => {
+  console.log('what is happening', s, p)
+  return s + p.exercises 
+}, 0)
+
+
+const total2 = courses[1].parts.reduce( (s, p) => {
+  console.log('what is happening', s, p)
+  return s + p.exercises 
+}, 0)
+
+return (
+  <div>
+    <Course course={courses[0]} total = {total} />
+    <Course course={courses[1]} total = {total2} />
+  </div>
+)
+
 }
-
-export default App;
+export default App
